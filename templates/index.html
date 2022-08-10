@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+</head>
+<body>
+    <!-- user input form-->
+    <form action="">
+        <div class="form-group">
+            <input type="text" placeholder="Enter Description" class="form-control">
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Add Todo" class="form-control">
+        </div>
+    </form>
+
+    <!-- todo items -->
+    <ul>
+        {% for d in data %}
+        <li>{{d.description}}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
