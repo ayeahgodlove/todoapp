@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, redirect, render_template, request, url_for
+from flask import Flask, jsonify, redirect, render_template, request, url_for, abort
 from flask_sqlalchemy import SQLAlchemy
 import sys
 
@@ -37,7 +37,9 @@ def create_todo():
     finally: 
         db.session.close()
     
-    if not error:
+    if error == True:
+        abort (400)
+    else:
         return jsonify(body)
 
 @app.route('/')
