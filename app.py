@@ -7,7 +7,7 @@ import sys
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://ayeah:673687549@localhost:5432/todoapp'
 db = SQLAlchemy(app, session_options={"expire_on_commit": False})
-migrate = Migrate(app, db)
+migrate = Migrate(app, db) # Bootstrap our application migrations
 
 # models
 class Todo(db.Model):
